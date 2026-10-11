@@ -1,4 +1,4 @@
-/* FORMA STUDIO — MENU */
+/* FORMA STUDIO — MOBILE MENU */
 
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("#main-nav");
@@ -58,7 +58,7 @@ if (contactForm && formStatus) {
     const body = encodeURIComponent(
       `Name: ${name}\n` +
       `Email: ${email}\n` +
-      `Interest: ${interest}\n\n` +
+      `Project type: ${interest}\n\n` +
       `Project details:\n${message}`
     );
 
