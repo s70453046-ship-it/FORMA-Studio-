@@ -987,63 +987,7 @@ h2 em {
     height: 350px;
   }
 
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 27px;
-    margin-top: 45px;
-  }
-
-  .process-strip {
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin-top: 48px;
-    padding-top: 28px;
-  }
-
-  .process-item {
-    display: grid;
-    grid-template-columns: 48px 30px 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    text-align: left;
-    align-items: center;
-    padding: 14px 0;
-  }
-
-  .process-icon {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    width: 42px;
-    height: 42px;
-    margin: 0;
-  }
-
-  .process-number {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    align-self: center;
-  }
-
-  .process-item h3 {
-    grid-column: 3;
-    grid-row: 1;
-    margin: 0;
-    font-size: 1rem;
-  }
-
-  .process-item p {
-    grid-column: 3;
-    grid-row: 2;
-    margin-top: 2px;
-    font-size: .74rem;
-  }
-
-  .process-connector {
-    width: 1px;
-    height: 16px;
-    margin: 0 0 0 20px;
-  }
-
+ 
   .section-heading {
     align-items: start;
     flex-direction: column;
