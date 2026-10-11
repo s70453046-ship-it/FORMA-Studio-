@@ -1,4 +1,6 @@
-/* FORMA STUDIO — MOBILE MENU */
+/* ========================================
+   FORMA STUDIO — MOBILE MENU
+======================================== */
 
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector("#main-nav");
@@ -17,13 +19,16 @@ if (menuToggle && nav) {
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("is-open");
+
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.setAttribute("aria-label", "Open menu");
     });
   });
 }
 
-/* AUTOMATIC FOOTER YEAR */
+/* ========================================
+   AUTOMATIC FOOTER YEAR
+======================================== */
 
 const yearElement = document.querySelector("#year");
 
@@ -31,7 +36,9 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-/* CONTACT FORM */
+/* ========================================
+   CONTACT FORM
+======================================== */
 
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
