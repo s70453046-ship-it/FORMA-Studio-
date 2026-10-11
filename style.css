@@ -54,6 +54,19 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+.arrow {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 1.08em;
+  line-height: 1;
+  font-weight: 400;
+  transition: transform .25s ease;
+}
+
+a:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
 /* HEADER */
 
 .site-header {
@@ -66,14 +79,14 @@ a {
   background: var(--paper);
   position: relative;
   z-index: 10;
-  border-bottom: 1px solid rgba(41,45,39,.12);
+  border-bottom: 1px solid rgba(41, 45, 39, .12);
 }
 
 .brand {
-  text-decoration: none;
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -1.5px;
+  text-decoration: none;
 }
 
 .brand span,
@@ -143,9 +156,9 @@ a {
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgba(22,26,22,.79) 0%,
-    rgba(22,26,22,.49) 46%,
-    rgba(22,26,22,.08) 100%
+    rgba(22, 26, 22, .79) 0%,
+    rgba(22, 26, 22, .49) 46%,
+    rgba(22, 26, 22, .08) 100%
   );
 }
 
@@ -213,7 +226,7 @@ h2 em {
   justify-content: space-between;
   gap: 22px;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,.7);
+  border-bottom: 1px solid rgba(255, 255, 255, .7);
   color: white;
   text-decoration: none;
   font-size: .67rem;
@@ -221,15 +234,11 @@ h2 em {
   white-space: nowrap;
 }
 
-.hero-link span {
-  font-size: 1rem;
-}
-
 .hero-index {
   color: #F1EEE8;
 }
 
-/* GENERAL SECTIONS */
+/* INTRO */
 
 .section-pad {
   padding: 105px 7%;
@@ -305,7 +314,7 @@ h2 em {
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   margin-top: 75px;
 }
@@ -336,7 +345,66 @@ h2 em {
   line-height: 1.8;
 }
 
-/* SERVICES — FOUR CARDS, ASYMMETRICAL LAYOUT */
+/* PROCESS ICONS */
+
+.process-strip {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr 50px 1fr;
+  align-items: center;
+  gap: 18px;
+  margin-top: 76px;
+  padding: 32px 0 10px;
+  border-top: 1px solid rgba(41, 45, 39, .28);
+}
+
+.process-item {
+  min-width: 0;
+  text-align: center;
+}
+
+.process-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--olive);
+  margin-bottom: 8px;
+}
+
+.process-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.process-number {
+  display: block;
+  color: var(--muted);
+  font-size: .58rem;
+  letter-spacing: 1.5px;
+}
+
+.process-item h3 {
+  margin-top: 4px;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.process-item p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.6;
+}
+
+.process-connector {
+  height: 1px;
+  width: 100%;
+  background: #BDB3A5;
+  margin-top: -36px;
+}
+
+/* SERVICES */
 
 .services {
   background: var(--cream);
@@ -407,9 +475,9 @@ h2 em {
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgba(20,23,20,.08) 0%,
-    rgba(20,23,20,.10) 30%,
-    rgba(20,23,20,.84) 100%
+    rgba(20, 23, 20, .08) 0%,
+    rgba(20, 23, 20, .10) 30%,
+    rgba(20, 23, 20, .84) 100%
   );
 }
 
@@ -432,12 +500,16 @@ h2 em {
 }
 
 .service-card-copy p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,.5);
+  border-top: 1px solid rgba(255, 255, 255, .5);
   font-size: .74rem;
 }
 
-/* COLLECTION */
+/* PROJECT GALLERY */
 
 .collection {
   background: #DED6C9;
@@ -473,59 +545,26 @@ h2 em {
   margin-top: 90px;
 }
 
-.product-image {
+.collection .product-image {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 340px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #C7B9A7;
+  background: #D5C9B9;
 }
 
-.product-image img {
+.collection .product-image img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   transition: transform .7s ease;
 }
 
-.product-sink .product-image {
-  height: 300px;
-  background: #D5C9B9;
-}
-
-.product-sink .product-image img {
-  width: 86%;
-  height: 86%;
-  object-fit: contain;
-}
-
-.product-bath .product-image {
-  height: 420px;
-  background: #D5C9B9;
-}
-
-.product-bath .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.product-shower .product-image {
-  height: 390px;
-  background: #C7B9A7;
-}
-
-.product-shower .product-image img {
-  width: 92%;
-  height: 92%;
-  object-fit: contain;
-}
-
 .product:hover .product-image img {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
 .product-caption {
@@ -534,8 +573,7 @@ h2 em {
   justify-content: space-between;
   gap: 10px;
   min-height: 85px;
-  padding-top: 17px;
-  padding-bottom: 18px;
+  padding: 17px 0 18px;
   border-bottom: 1px solid #BFB6A8;
 }
 
@@ -555,7 +593,7 @@ h2 em {
   font-size: 1.1rem;
 }
 
-/* PLANNING — FULL-WIDTH IMAGE */
+/* PLANNING FEATURE */
 
 .planning-feature {
   min-height: 600px;
@@ -591,9 +629,9 @@ h2 em {
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgba(25,29,25,.83) 0%,
-    rgba(25,29,25,.60) 48%,
-    rgba(25,29,25,.12) 100%
+    rgba(25, 29, 25, .83) 0%,
+    rgba(25, 29, 25, .60) 48%,
+    rgba(25, 29, 25, .12) 100%
   );
 }
 
@@ -700,7 +738,7 @@ h2 em {
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(255,255,255,.35);
+  border: 1px solid rgba(255, 255, 255, .35);
   border-radius: 0;
   padding: 15px 13px;
   background: transparent;
@@ -730,6 +768,9 @@ h2 em {
 
 .form-submit {
   align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
   margin-top: 15px;
   padding: 16px 22px;
   border: 1px solid white;
@@ -827,7 +868,7 @@ h2 em {
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,.2);
+  border-top: 1px solid rgba(255, 255, 255, .2);
   color: #BDBFB6;
   font-size: .62rem;
   letter-spacing: .7px;
@@ -872,17 +913,17 @@ h2 em {
     margin-top: 0;
   }
 
-  .product-bath .product-image,
-  .product-shower .product-image {
-    height: 340px;
-  }
-
   .planning-copy {
     padding: 65px 8%;
   }
 
   .footer-main {
     gap: 25px;
+  }
+
+  .process-strip {
+    grid-template-columns: 1fr 30px 1fr 30px 1fr;
+    gap: 12px;
   }
 }
 
@@ -957,8 +998,8 @@ h2 em {
   .hero-shade {
     background: linear-gradient(
       0deg,
-      rgba(22,26,22,.86),
-      rgba(22,26,22,.15)
+      rgba(22, 26, 22, .86),
+      rgba(22, 26, 22, .15)
     );
   }
 
@@ -1009,6 +1050,57 @@ h2 em {
     margin-top: 45px;
   }
 
+  .process-strip {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 48px;
+    padding-top: 28px;
+  }
+
+  .process-item {
+    display: grid;
+    grid-template-columns: 48px 30px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    text-align: left;
+    align-items: center;
+    padding: 14px 0;
+  }
+
+  .process-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+  }
+
+  .process-number {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .process-item h3 {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .process-item p {
+    grid-column: 3;
+    grid-row: 2;
+    margin-top: 2px;
+    font-size: .74rem;
+  }
+
+  .process-connector {
+    width: 1px;
+    height: 16px;
+    margin: 0 0 0 20px;
+  }
+
   .section-heading {
     align-items: start;
     flex-direction: column;
@@ -1048,28 +1140,8 @@ h2 em {
     margin-top: 0;
   }
 
-  .product-image,
-  .product-sink .product-image,
-  .product-shower .product-image,
-  .product-bath .product-image {
-    height: auto;
+  .collection .product-image {
     aspect-ratio: 4 / 3;
-  }
-
-  .product-sink .product-image img {
-    width: 86%;
-    height: 86%;
-  }
-
-  .product-bath .product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .product-shower .product-image img {
-    width: 92%;
-    height: 92%;
   }
 
   .product-caption h3 {
@@ -1087,9 +1159,9 @@ h2 em {
   .planning-overlay {
     background: linear-gradient(
       0deg,
-      rgba(25,29,25,.86) 0%,
-      rgba(25,29,25,.47) 65%,
-      rgba(25,29,25,.15) 100%
+      rgba(25, 29, 25, .86) 0%,
+      rgba(25, 29, 25, .47) 65%,
+      rgba(25, 29, 25, .15) 100%
     );
   }
 
@@ -1145,61 +1217,5 @@ h2 em {
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
-  }
-}
-/* PROJECT IMAGES — CONSTRUCTION, RENOVATION & TURNKEY */
-
-.collection .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.collection .product-sink .product-image img,
-.collection .product-shower .product-image img,
-.collection .product-bath .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* PROJECT GALLERY — CONSISTENT IMAGE FRAMES */
-
-.collection-grid {
-  align-items: start;
-}
-
-.collection .product-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #D5C9B9;
-}
-
-.collection .product-sink .product-image,
-.collection .product-shower .product-image,
-.collection .product-bath .product-image {
-  height: auto;
-  aspect-ratio: 4 / 3;
-}
-
-.collection .product-image img,
-.collection .product-sink .product-image img,
-.collection .product-shower .product-image img,
-.collection .product-bath .product-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-@media (max-width: 760px) {
-  .collection .product-image,
-  .collection .product-sink .product-image,
-  .collection .product-shower .product-image,
-  .collection .product-bath .product-image {
-    aspect-ratio: 4 / 3;
   }
 }
