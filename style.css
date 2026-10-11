@@ -1147,3 +1147,19 @@ h2 em {
     animation-duration: .01ms !important;
   }
 }
+/* PROJECT IMAGES — CONSTRUCTION, RENOVATION & TURNKEY */
+
+.collection .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.collection .product-sink .product-image img,
+.collection .product-shower .product-image img,
+.collection .product-bath .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
