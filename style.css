@@ -76,19 +76,20 @@ a {
   letter-spacing: -1.5px;
 }
 
-.brand span {
+.brand span,
+.footer-logo span {
   color: var(--accent);
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: clamp(18px, 3vw, 42px);
+  gap: clamp(14px, 2.2vw, 32px);
 }
 
 .nav a {
   text-decoration: none;
-  font-size: .78rem;
+  font-size: .76rem;
   transition: opacity .25s ease;
 }
 
@@ -98,7 +99,7 @@ a {
 
 .nav .nav-cta {
   border: 1px solid var(--ink);
-  padding: 13px 18px;
+  padding: 13px 16px;
 }
 
 .menu-toggle {
@@ -155,7 +156,7 @@ a {
   align-items: center;
   gap: 20px;
   font-size: .62rem;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.5px;
 }
 
 .hero-copy {
@@ -195,12 +196,12 @@ h2 em {
   align-items: end;
   justify-content: space-between;
   gap: 35px;
-  max-width: 790px;
+  max-width: 800px;
   margin-top: 40px;
 }
 
 .hero-bottom p {
-  max-width: 360px;
+  max-width: 390px;
   color: #F0EEE8;
   font-size: .91rem;
   line-height: 1.9;
@@ -329,13 +330,13 @@ h2 em {
 
 .step p {
   margin-top: 10px;
-  max-width: 270px;
+  max-width: 290px;
   font-size: .85rem;
   color: var(--muted);
   line-height: 1.8;
 }
 
-/* SERVICES — PRESERVE THE ORIGINAL ASYMMETRICAL LAYOUT */
+/* SERVICES — FOUR CARDS, ASYMMETRICAL LAYOUT */
 
 .services {
   background: var(--cream);
@@ -354,7 +355,7 @@ h2 em {
 }
 
 .heading-note {
-  max-width: 270px;
+  max-width: 300px;
   color: var(--muted);
   font-size: .88rem;
   line-height: 1.9;
@@ -369,6 +370,7 @@ h2 em {
 }
 
 .service-card {
+  min-width: 0;
   min-height: 420px;
   height: 34vw;
   max-height: 520px;
@@ -376,7 +378,7 @@ h2 em {
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
   overflow: hidden;
   background: var(--olive);
   color: white;
@@ -405,14 +407,10 @@ h2 em {
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgba(20,23,20,.12) 0%,
-    rgba(20,23,20,.04) 34%,
-    rgba(20,23,20,.83) 100%
+    rgba(20,23,20,.08) 0%,
+    rgba(20,23,20,.10) 30%,
+    rgba(20,23,20,.84) 100%
   );
-}
-
-.card-number {
-  display: none;
 }
 
 .service-card-copy {
@@ -439,7 +437,7 @@ h2 em {
   font-size: .74rem;
 }
 
-/* COLLECTION — KEEP THREE DISTINCT IMAGES */
+/* COLLECTION */
 
 .collection {
   background: #DED6C9;
@@ -460,7 +458,6 @@ h2 em {
   min-width: 0;
 }
 
-/* The original staggered arrangement */
 .product-sink {
   grid-column: 1;
   margin-top: 45px;
@@ -476,7 +473,6 @@ h2 em {
   margin-top: 90px;
 }
 
-/* Important: the product classes are on the image container itself. */
 .product-image {
   position: relative;
   display: flex;
@@ -495,37 +491,34 @@ h2 em {
   transition: transform .7s ease;
 }
 
-/* Show the basin without an aggressive crop. */
-.product-image.product-sink {
+.product-sink .product-image {
   height: 300px;
   background: #D5C9B9;
 }
 
-.product-image.product-sink img {
+.product-sink .product-image img {
   width: 86%;
   height: 86%;
   object-fit: contain;
 }
 
-/* Preserve the complete horizontal bathroom composition. */
-.product-image.product-bath {
+.product-bath .product-image {
   height: 420px;
   background: #D5C9B9;
 }
 
-.product-image.product-bath img {
+.product-bath .product-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Keep the shower system visible without cutting off the product. */
-.product-image.product-shower {
+.product-shower .product-image {
   height: 390px;
   background: #C7B9A7;
 }
 
-.product-image.product-shower img {
+.product-shower .product-image img {
   width: 92%;
   height: 92%;
   object-fit: contain;
@@ -533,10 +526,6 @@ h2 em {
 
 .product:hover .product-image img {
   transform: scale(1.02);
-}
-
-.product-number {
-  display: none;
 }
 
 .product-caption {
@@ -566,7 +555,7 @@ h2 em {
   font-size: 1.1rem;
 }
 
-/* FULL-BACKGROUND PLANNING FEATURE */
+/* PLANNING — FULL-WIDTH IMAGE */
 
 .planning-feature {
   min-height: 600px;
@@ -619,7 +608,7 @@ h2 em {
 }
 
 .planning-copy > p:not(.eyebrow) {
-  max-width: 390px;
+  max-width: 410px;
   color: #F0EEE8;
   font-size: .92rem;
   line-height: 1.9;
@@ -635,9 +624,7 @@ h2 em {
   letter-spacing: 1.5px;
 }
 
-/* DETAILS THAT MAKE A DIFFERENCE
-   Keep the original paper background.
-   Remove the visible frame around the photograph. */
+/* FINISHING DETAILS */
 
 .feature-strip {
   display: grid;
@@ -653,13 +640,7 @@ h2 em {
   background: transparent;
 }
 
-/* Overrides the old image-frame background only for this photo. */
-.feature-image.image-frame {
-  background: transparent;
-}
-
 .feature-image img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -676,7 +657,7 @@ h2 em {
 }
 
 .feature-copy .body-copy {
-  max-width: 380px;
+  max-width: 400px;
 }
 
 /* CONTACT */
@@ -697,16 +678,11 @@ h2 em {
 }
 
 .contact-heading > p:not(.eyebrow) {
-  max-width: 330px;
+  max-width: 350px;
   color: #D9DCD3;
   font-size: .9rem;
   line-height: 1.9;
   margin-top: 25px;
-}
-
-/* Contact details stay in the footer, not repeated here. */
-.contact-details {
-  display: none;
 }
 
 .contact-form {
@@ -806,10 +782,6 @@ h2 em {
   letter-spacing: -1.5px;
 }
 
-.footer-logo span {
-  color: var(--accent);
-}
-
 .footer-brand > p {
   margin-bottom: 14px;
   color: #D1D2C9;
@@ -818,7 +790,7 @@ h2 em {
 }
 
 .footer-brand .footer-about {
-  max-width: 350px;
+  max-width: 360px;
   color: #BDBFB6;
   font-size: .7rem;
 }
@@ -863,7 +835,19 @@ h2 em {
 
 /* TABLET */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  .site-header {
+    gap: 18px;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: .7rem;
+  }
+
   .section-pad {
     padding: 80px 6%;
   }
@@ -888,8 +872,8 @@ h2 em {
     margin-top: 0;
   }
 
-  .product-image.product-bath,
-  .product-image.product-shower {
+  .product-bath .product-image,
+  .product-shower .product-image {
     height: 340px;
   }
 
@@ -904,7 +888,7 @@ h2 em {
 
 /* MOBILE */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .site-header {
     min-height: 70px;
     padding: 0 6%;
@@ -951,6 +935,7 @@ h2 em {
   .nav a {
     padding: 15px 0;
     border-bottom: 1px solid var(--line);
+    font-size: .8rem;
   }
 
   .nav .nav-cta {
@@ -965,20 +950,20 @@ h2 em {
   }
 
   .hero-topline {
-    font-size: .52rem;
-    letter-spacing: 1px;
+    font-size: .5rem;
+    letter-spacing: .8px;
   }
 
   .hero-shade {
     background: linear-gradient(
       0deg,
-      rgba(22,26,22,.83),
-      rgba(22,26,22,.12)
+      rgba(22,26,22,.86),
+      rgba(22,26,22,.15)
     );
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.8rem, 15vw, 6rem);
+    font-size: clamp(3.5rem, 14vw, 5.7rem);
   }
 
   .hero-bottom {
@@ -993,8 +978,8 @@ h2 em {
   }
 
   .hero-index {
-    font-size: .5rem;
-    letter-spacing: .7px;
+    font-size: .48rem;
+    letter-spacing: .5px;
   }
 
   .section-pad {
@@ -1011,7 +996,7 @@ h2 em {
   .intro-copy h2,
   .section-heading h2,
   .feature-copy h2 {
-    font-size: clamp(2.9rem, 12vw, 4.2rem);
+    font-size: clamp(2.9rem, 11vw, 4.2rem);
   }
 
   .intro-image {
@@ -1035,8 +1020,6 @@ h2 em {
     max-width: 340px;
   }
 
-  /* Preserve the original offset layout on desktop.
-     Stack the service cards on narrow screens. */
   .service-grid {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -1050,10 +1033,9 @@ h2 em {
   }
 
   .service-card-copy h3 {
-    font-size: 2.4rem;
+    font-size: 2.35rem;
   }
 
-  /* Collection images remain complete and distinct. */
   .collection-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1067,25 +1049,25 @@ h2 em {
   }
 
   .product-image,
-  .product-image.product-sink,
-  .product-image.product-shower,
-  .product-image.product-bath {
+  .product-sink .product-image,
+  .product-shower .product-image,
+  .product-bath .product-image {
     height: auto;
     aspect-ratio: 4 / 3;
   }
 
-  .product-image.product-sink img {
+  .product-sink .product-image img {
     width: 86%;
     height: 86%;
   }
 
-  .product-image.product-bath img {
+  .product-bath .product-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 
-  .product-image.product-shower img {
+  .product-shower .product-image img {
     width: 92%;
     height: 92%;
   }
@@ -1105,8 +1087,8 @@ h2 em {
   .planning-overlay {
     background: linear-gradient(
       0deg,
-      rgba(25,29,25,.84) 0%,
-      rgba(25,29,25,.45) 65%,
+      rgba(25,29,25,.86) 0%,
+      rgba(25,29,25,.47) 65%,
       rgba(25,29,25,.15) 100%
     );
   }
@@ -1117,7 +1099,7 @@ h2 em {
   }
 
   .planning-copy h2 {
-    font-size: clamp(3.2rem, 13vw, 4.5rem);
+    font-size: clamp(3.1rem, 12vw, 4.4rem);
   }
 
   .planning-index {
@@ -1129,11 +1111,6 @@ h2 em {
   .feature-image {
     height: auto;
     aspect-ratio: 4 / 3;
-  }
-
-  .feature-image img {
-    width: 100%;
-    height: 100%;
   }
 
   .contact {
